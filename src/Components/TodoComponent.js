@@ -7,10 +7,7 @@ import AddTodo from './AddTodo'
 class ToDoComponent extends Component {
 
 state = {
-  todos: [
-    {id: 1, content: 'buy some milk'},
-    {id: 2, content: 'play Mario Kart'}
-  ]
+  todos: []
 }
 
 
