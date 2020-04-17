@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  display: grid;
+  grid-template-columns: 2fr, 2fr;
+  grid-template-rows: 2fr, 7fr;
 }
 
 .App-logo {
@@ -13,9 +15,11 @@
   }
 }
 
-.App-header {
+.Header {
+  grid-row: 1;
+  grid-column: 1;
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,15 +28,8 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Todos {
+  grid-column: 2;
+  grid-row: 2;
+  background-color: red;
 }

@@ -8,8 +8,12 @@ import TodoComponent from './Components/TodoComponent'
 function App() {
   return (
     <div className="App">
-      <Title />
-      <TodoComponent />
+      <div className = "Header">
+        <Title />
+      </div>
+      <div className="Todos">
+        <TodoComponent />
+      </div>
     </div>
   );
 }
