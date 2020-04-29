@@ -13,7 +13,7 @@ function App() {
         <Row>
           <Col><TodoComponent /></Col>
           <Col>
-            <Row></Row>
+            <Row><GameComponent /></Row>
             <Row><StatusBar /></Row>
           </Col>
         </Row>

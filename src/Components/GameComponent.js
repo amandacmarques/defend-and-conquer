@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
-import config from "./config.js"
+import config from "./config"
 
 class GameComponent extends Component {
 
   state = {
-    gameBoard: [...Array(20)].map(e => Array(6))
+    rows: 20,
+    cols: 8,
+    gameBoard: []
   }
 
 

@@ -29,14 +29,14 @@ addTodo = (todo) => {
 }
 
   render() {
-  return (
-    <div className="todo-app container">
-      <h1 className="center blue-text">Todo's</h1>
-      <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
-      <AddTodo addTodo={this.addTodo}/>
-    </div>
-  );
-}
+    return (
+      <div className="todo-app container">
+        <h1 className="center blue-text">Todo's</h1>
+        <Todos todos={this.state.todos} deleteTodo={this.deleteTodo}/>
+        <AddTodo addTodo={this.addTodo}/>
+      </div>
+    );
+  }
 }
 
 export default ToDoComponent;
