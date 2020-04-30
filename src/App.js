@@ -43,11 +43,11 @@ class App extends Component {
               <TodoComponent updatePoints={this.updatePoints}/>
             </Col>
             <Col>
-              <Row><GameComponent decrementPoints={this.decrementPoints} userInput={this.state.userInput}/></Row>
+              <Row><GameComponent decrementPoints={this.decrementPoints} userInput={this.state.userInput} picture={this.state.picture}/></Row>
               <Row><StatusBar points={this.state.points}/></Row>
             </Col>
           </Row>
-          <GuessBox picture={this.state.picture} setInput={this.setInput}/>
+          <GuessBox setInput={this.setInput}/>
         </Container>
         <div className = "Header">
           <Title />

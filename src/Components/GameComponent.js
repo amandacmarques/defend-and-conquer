@@ -30,7 +30,11 @@ class GameComponent extends Component {
 
   displayBoard = () => {
     const board = [];
-
+    let hasNotRun = true;
+    if (this.props.picture == this.props.userInput && hasNotRun) {
+      this.displayAll();
+      hasNotRun = false;
+    }
     return (
       <div>
           {this.state.gameState.map((row, i) => (
@@ -58,7 +62,7 @@ class GameComponent extends Component {
         })}
       </Row>
     ))}
-    this.setState({gameState: newGameState})
+//    this.setState({gameState: newGameState})
   }
 
   reveal = (i, j) => {
