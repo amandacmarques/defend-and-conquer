@@ -1,21 +1,36 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const GuessBox = () => {
+class GuessBox extends Component {
 
-  const onSubmit = (event) => {
-    event.preventDefault();
-    console.log("HI");
+  state = {
+      guess: ''
   }
 
-  return (
-    <form onSubmit={onSubmit}>
-      <label>
-      Guess:
-        <input type="text" name="guess" />
-      </label>
-      <button>Submit</button>
-    </form>
-  )
+  handleChange = (event) => {
+    this.setState({
+      guess: event.target.value
+    })
+  }
+
+  onSubmit = (event) => {
+    event.preventDefault();
+    if (this.props.picture==this.state.guess) {
+      console.log("Hedgehog");
+
+    }
+  }
+
+  render() {
+      return (
+      <form onSubmit={this.onSubmit}>
+        <label>
+        Guess:
+          <input type="text" name="guess" onChange={this.handleChange}/>
+        </label>
+        <button>Submit</button>
+      </form>
+    );
+  }
 }
 
 export default GuessBox;

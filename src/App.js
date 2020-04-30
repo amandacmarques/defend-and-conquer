@@ -10,7 +10,8 @@ import GuessBox from './Components/GuessBox'
 class App extends Component {
 
   state = {
-    points: 0
+    points: 0,
+    picture: 'hedgehog'
   }
 
   updatePoints = (todoPoints) => {
@@ -36,7 +37,7 @@ class App extends Component {
               <Row><StatusBar points={this.state.points}/></Row>
             </Col>
           </Row>
-          <GuessBox />
+          <GuessBox picture={this.state.picture}/>
         </Container>
         <div className = "Header">
           <Title />

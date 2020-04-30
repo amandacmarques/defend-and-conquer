@@ -54,7 +54,7 @@ class GameComponent extends Component {
     newGameState[i][j] = 1;
     console.log("onClick is working", newGameState);
     this.setState({gameState: newGameState})
-    this.props.decrementPoints(5);
+    this.props.decrementPoints(1);
   }
 
   //iterate over array
