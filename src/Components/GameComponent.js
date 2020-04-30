@@ -49,6 +49,18 @@ class GameComponent extends Component {
 
   }
 
+  displayAll = () => {
+    let newGameState = [...this.state.gameState];
+    {this.state.gameState.map((row, i) => (
+      <Row key={i}>
+        {row.map((col, j) => {
+          newGameState[i][j] = 1;
+        })}
+      </Row>
+    ))}
+    this.setState({gameState: newGameState})
+  }
+
   reveal = (i, j) => {
     let newGameState = [...this.state.gameState];
     newGameState[i][j] = 1;
@@ -56,16 +68,6 @@ class GameComponent extends Component {
     this.setState({gameState: newGameState})
     this.props.decrementPoints(1);
   }
-
-  //iterate over array
-  //map over array to create columns and rows
-
-  // <Row><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col></Row>
-  // <Row><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col></Row>
-  // <Row><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col></Row>
-  // <Row><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col></Row>
-  // <Row><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col><Col><Cell/></Col></Row>
-
 
   render() {
     return (
