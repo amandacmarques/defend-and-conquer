@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 
-const StatusBar = () => {
+const StatusBar = ({points}) => {
+
   return (
-    <p>Points: </p>
+    <p>Points: {points}</p>
   )
 }
 
