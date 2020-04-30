@@ -15,10 +15,6 @@ class GuessBox extends Component {
   onSubmit = (event) => {
     event.preventDefault();
     this.props.setInput(this.state.guess)
-    if (this.props.picture==this.state.guess) {
-      console.log("Hedgehog");
-
-    }
     this.setState({
         guess: ''
     });
