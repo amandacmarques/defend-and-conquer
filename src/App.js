@@ -42,7 +42,7 @@ class App extends Component {
             <Col>
               <TodoComponent updatePoints={this.updatePoints}/>
             </Col>
-            <Col>
+            <Col className = "Game">
               <Row><GameComponent decrementPoints={this.decrementPoints} userInput={this.state.userInput} picture={this.state.picture} points={this.state.points}/></Row>
               <Row><StatusBar points={this.state.points}/></Row>
             </Col>

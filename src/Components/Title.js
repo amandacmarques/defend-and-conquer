@@ -1,8 +1,9 @@
 import React from 'react'
+import "./CellStyle.css"
 
 const Title = () => {
   return (
-    <h1>Defend And Conquer</h1>
+    <h1 className="Title">ToDoodle</h1>
   )
 }
 
