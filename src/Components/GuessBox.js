@@ -14,10 +14,14 @@ class GuessBox extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
+    this.props.setInput(this.state.guess)
     if (this.props.picture==this.state.guess) {
       console.log("Hedgehog");
 
     }
+    this.setState({
+        guess: ''
+    });
   }
 
   render() {
@@ -25,7 +29,7 @@ class GuessBox extends Component {
       <form onSubmit={this.onSubmit}>
         <label>
         Guess:
-          <input type="text" name="guess" onChange={this.handleChange}/>
+          <input type="text" name="guess" onChange={this.handleChange} value={this.state.guess}/>
         </label>
         <button>Submit</button>
       </form>

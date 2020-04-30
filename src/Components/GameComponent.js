@@ -62,6 +62,7 @@ class GameComponent extends Component {
   }
 
   reveal = (i, j) => {
+    console.log(this.props.userInput);
     let newGameState = [...this.state.gameState];
     newGameState[i][j] = 1;
     console.log("onClick is working", newGameState);

@@ -11,7 +11,15 @@ class App extends Component {
 
   state = {
     points: 0,
-    picture: 'hedgehog'
+    picture: 'hedgehog',
+    userInput: ''
+  }
+
+  setInput = (input) => {
+    this.setState({
+      userInput: input
+    })
+    console.log(input);
   }
 
   updatePoints = (todoPoints) => {
@@ -24,6 +32,8 @@ class App extends Component {
     console.log(this.state.points);
   }
 
+
+
   render() {
     return (
       <div className = "App">
@@ -33,11 +43,11 @@ class App extends Component {
               <TodoComponent updatePoints={this.updatePoints}/>
             </Col>
             <Col>
-              <Row><GameComponent decrementPoints={this.decrementPoints}/></Row>
+              <Row><GameComponent decrementPoints={this.decrementPoints} userInput={this.state.userInput}/></Row>
               <Row><StatusBar points={this.state.points}/></Row>
             </Col>
           </Row>
-          <GuessBox picture={this.state.picture}/>
+          <GuessBox picture={this.state.picture} setInput={this.setInput}/>
         </Container>
         <div className = "Header">
           <Title />
