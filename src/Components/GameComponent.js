@@ -1,13 +1,31 @@
 import React, { Component } from 'react'
-import config from "./config"
 import Cell from "./Cell"
 import { Row, Col} from 'react-bootstrap'
+import "./CellStyle.css"
 
 class GameComponent extends Component {
 
   state = {
-    gameState: [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]],
-    cellColors: [["red", "red", "red", "red"], ["red", "red", "red", "red"], ["red", "red", "red", "red"], ["red", "red", "red", "red"]]
+    gameState: [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
+    cellColors: [["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"],
+                 ["pink", "pink", "pink", "brown", "pink", "brown", "pink", "brown", "pink", "pink"],
+                 ["brown", "pink", "brown", "red", "brown", "brown", "brown", "brown", "pink", "brown"],
+                 ["pink", "brown", "brown", "brown", "brown", "yellow", "brown", "red", "brown", "pink"],
+                 ["pink", "peachpuff", "peachpuff", "peachpuff", "brown", "brown", "brown", "brown", "brown", "brown"],
+                 ["black", "peachpuff", "black", "peachpuff", "brown", "brown", "green", "brown", "brown", "brown"],
+                 ["peachpuff", "peachpuff", "peachpuff", "peachpuff", "brown", "brown", "brown", "brown", "brown", "pink"],
+                 ["pink", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "brown", "pink"],
+                 ["pink", "pink", "pink", "brown", "pink", "pink", "brown", "pink", "pink", "pink"],
+                 ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]]
   }
 
   displayBoard = () => {
@@ -22,7 +40,7 @@ class GameComponent extends Component {
                 if (this.state.gameState[i][j] == 1) {
                   color = this.state.cellColors[i][j];
                 }
-                return (<Col key={j}><Cell color={color} reveal={() => this.reveal(i, j)}/></Col>)
+                return (<Col className="column" key={j}><Cell color={color} reveal={() => this.reveal(i, j)}/></Col>)
               })}
             </Row>
           ))}

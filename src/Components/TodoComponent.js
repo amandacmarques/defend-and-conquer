@@ -2,13 +2,11 @@ import React, { Component } from 'react';
 import Todos from './Todos';
 import AddTodo from './AddTodo'
 
-
 class ToDoComponent extends Component {
 
   state = {
     todos: []
   }
-
 
   deleteTodo = (id) => {
     const todos = this.state.todos.filter(todo => {
@@ -29,7 +27,6 @@ class ToDoComponent extends Component {
   }
 
   render() {
-
     return (
       <div className="todo-app container">
         <h1 className="center blue-text">Todo's</h1>
@@ -38,8 +35,6 @@ class ToDoComponent extends Component {
       </div>
     );
   }
-
-
 }
 
 export default ToDoComponent;
