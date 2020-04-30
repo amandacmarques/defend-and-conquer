@@ -66,7 +66,9 @@ class GameComponent extends Component {
   }
 
   reveal = (i, j) => {
-    if (this.props.points > 0) {
+    if (this.state.gameState[i][j]==1) {
+      console.log("clicked already");
+    } else if (this.props.points > 0) {
       let newGameState = [...this.state.gameState];
       newGameState[i][j] = 1;
       this.setState({gameState: newGameState})
