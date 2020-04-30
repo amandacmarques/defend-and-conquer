@@ -5,6 +5,7 @@ import TodoComponent from './Components/TodoComponent';
 import GameComponent from './Components/GameComponent'
 import StatusBar from './Components/StatusBar'
 import { Container, Row, Col } from 'react-bootstrap';
+import GuessBox from './Components/GuessBox'
 
 class App extends Component {
 
@@ -13,7 +14,12 @@ class App extends Component {
   }
 
   updatePoints = (todoPoints) => {
-    this.setState({points: todoPoints});
+    this.setState({points: this.state.points + todoPoints});
+    console.log(this.state.points);
+  }
+
+  decrementPoints = (deduction) => {
+    this.setState({points: this.state.points - deduction});
     console.log(this.state.points);
   }
 
@@ -26,10 +32,11 @@ class App extends Component {
               <TodoComponent updatePoints={this.updatePoints}/>
             </Col>
             <Col>
-              <Row><GameComponent /></Row>
+              <Row><GameComponent decrementPoints={this.decrementPoints}/></Row>
               <Row><StatusBar points={this.state.points}/></Row>
             </Col>
           </Row>
+          <GuessBox />
         </Container>
         <div className = "Header">
           <Title />
