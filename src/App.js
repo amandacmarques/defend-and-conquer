@@ -13,7 +13,17 @@ class App extends Component {
   state = {
     points: 0,
     picture: 'hedgehog',
-    userInput: ''
+    userInput: '',
+    image: [["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"],
+                 ["pink", "pink", "pink", "brown", "pink", "brown", "pink", "brown", "pink", "pink"],
+                 ["brown", "pink", "brown", "red", "brown", "brown", "brown", "brown", "pink", "brown"],
+                 ["pink", "brown", "brown", "brown", "brown", "yellow", "brown", "red", "brown", "pink"],
+                 ["pink", "peachpuff", "peachpuff", "peachpuff", "brown", "brown", "brown", "brown", "brown", "brown"],
+                 ["black", "peachpuff", "black", "peachpuff", "brown", "brown", "green", "brown", "brown", "brown"],
+                 ["peachpuff", "peachpuff", "peachpuff", "peachpuff", "brown", "brown", "brown", "brown", "brown", "pink"],
+                 ["pink", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "peachpuff", "brown", "pink"],
+                 ["pink", "pink", "pink", "brown", "pink", "pink", "brown", "pink", "pink", "pink"],
+                 ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]]
   }
 
   setInput = (input) => {
@@ -21,6 +31,13 @@ class App extends Component {
       userInput: input
     })
     console.log(input);
+  }
+
+  imageChange = (newImage) => {
+    this.setState({
+      image: newImage
+    })
+    console.log(newImage);
   }
 
   updatePoints = (todoPoints) => {
@@ -38,14 +55,14 @@ class App extends Component {
   render() {
     return (
       <div className = "App">
-        <ImportFileFromBodyComponent />
+        <ImportFileFromBodyComponent changeImage={this.imageChange}/>
         <Container>
           <Row>
             <Col>
               <TodoComponent updatePoints={this.updatePoints}/>
             </Col>
             <Col className = "Game">
-              <Row><GameComponent decrementPoints={this.decrementPoints} userInput={this.state.userInput} picture={this.state.picture} points={this.state.points}/></Row>
+              <Row><GameComponent currImage={this.state.image} decrementPoints={this.decrementPoints} userInput={this.state.userInput} picture={this.state.picture} points={this.state.points}/></Row>
               <Row><StatusBar points={this.state.points}/></Row>
             </Col>
           </Row>

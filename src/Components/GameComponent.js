@@ -28,6 +28,14 @@ class GameComponent extends Component {
                  ["pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink", "pink"]]
   }
 
+
+  componentDidUpdate(prevProps) {
+      if (this.props.currImage !== prevProps.currImage) {
+          // bar prop has changed
+          alert("image changed");
+      }
+  }
+
   displayBoard = () => {
     const board = [];
     let hasNotRun = true;
@@ -78,6 +86,18 @@ class GameComponent extends Component {
     } else {
       alert("Stop procrastinating and do your to-dos to get more points!")
     }
+  }
+
+  loadNewFile = (arr) => {
+    this.state.cellColors = arr;
+    let newGameState = [...this.state.gameState];
+    {this.state.gameState.map((row, i) => (
+      <Row key={i}>
+        {row.map((col, j) => {
+          newGameState[i][j] = 1;
+        })}
+      </Row>
+    ))}
   }
 
   render() {
