@@ -6,6 +6,7 @@ import GameComponent from './Components/GameComponent'
 import StatusBar from './Components/StatusBar'
 import { Container, Row, Col } from 'react-bootstrap';
 import GuessBox from './Components/GuessBox'
+import ImportFileFromBodyComponent from './Components/ImportFileFromBodyComponent';
 
 class App extends Component {
 
@@ -37,6 +38,7 @@ class App extends Component {
   render() {
     return (
       <div className = "App">
+        <ImportFileFromBodyComponent />
         <Container>
           <Row>
             <Col>
